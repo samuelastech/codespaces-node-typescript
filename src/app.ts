@@ -1,21 +1,22 @@
-import fastify from 'fastify'
-import cors from '@fastify/cors'
-import dotenv from 'dotenv'
+import fastify from 'fastify';
+import cors from '@fastify/cors';
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 /**
  * Routes
  */
-import appRoute from './routes/app'
+import appRoute from './routes/app';
 
 function build(options = {}) {
-    const app = fastify(options)
-    app.register(cors, { origin: true })
+  const app = fastify(options);
+  
+  app.register(cors, { origin: true });
 
-    app.register(appRoute)
-    
-    return app
+  app.register(appRoute);
+
+  return app;
 }
 
-export default build
+export default build;
