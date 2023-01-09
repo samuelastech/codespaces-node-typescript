@@ -7,7 +7,7 @@ dotenv.config();
 /**
  * Routes
  */
-import appRoute from './routes/app';
+import appRoute from './routes';
 
 function build(options = {}) {
   const app = fastify(options);
